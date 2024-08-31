@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsiveStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact us</title>
+    
+    <style>  
+/* For smallest phone screens (portrait mode) */
+@media (max-width: 320px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Further reduced gap */
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .contact-form {
+        width: 100%;
+        height: auto; /* Let the height adjust to content */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Vertical stacking */
+    }
+
+    .contact-form .name-fields input {
+        width: 5px;
+        padding: 2px; /* Adjusted padding */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .contact-form textarea {
+        height: 50px; /* Reduced height */
+    }
+
+    .contact-form .submit-btn {
+        padding: 10px;
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .heading h2 {
+        font-size: 40px; /* Smaller font size */
+    }
+
+    .heading p {
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .chat-section,
+    .call-section {
+        padding-left: 0; /* Remove padding for smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .call-section .phone-icon {
+        margin-right: 4px; /* Smaller margin */
+        font-size: 18px; /* Smaller icon size */
+    }
+}
+
+/* For normal phone screens */
+@media (min-width: 321px) and (max-width: 480px) {
+    
+.navbar-left img {
+    display: flex;
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar {
+    display: none;
+    background-color: transparent; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 15px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+    
+}
+
+.nav-link {
+    display: none;
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-links :hover {
+    color: #090b0d; /* Blue text on hover */
+}
+
+
+.navbar-right .contact-btn {
+    display: none;
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+.nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the navbar container */
+    .navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reduced gap for phone screens */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-form {
+        width: 100%;
+        height: auto; /* Let the height adjust to content */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Vertical stacking */
+    }
+
+    .contact-form .name-fields input {
+        width: 90%;
+        padding: 10px; /* Adjusted padding */
+        font-size: 15px; /* Smaller font size */
+    }
+    .contact-form input.full-width,
+        .contact-form textarea.full-width {
+            width: 88%;
+            
+        }
+
+    .contact-form textarea {
+        height: 70px; /* Adjusted height */
+    }
+
+    .contact-form .submit-btn {
+        padding: 10px;
+        font-size: 17px; /* Smaller font size */
+        bottom: 10px;
+
+    }
+
+    .heading h2 {
+        font-size: 50px; /* Smaller font size */
+    }
+
+    .heading p {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .chat-section,
+    .call-section {
+        padding-left: 0; /* Remove padding */
+        text-align: center; /* Center text */
+    }
+
+    .call-section .phone-icon {
+        margin-right: 6px; /* Smaller margin */
+        font-size: 20px; /* Adjusted icon size */
+    }
+   
+}
+
+/* For tablet screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    
+.navbar {
+    display: none;
+    background-color: transparent; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 15px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+    
+    
+}
+
+.nav-link {
+    display: none;
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-links :hover {
+    color: #090b0d; /* Blue text on hover */
+}
+
+
+.navbar-right .contact-btn {
+    display: none;
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+.nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the navbar container */
+    .navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+        
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Adjusted gap */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-form {
+        width: 90px;
+        height: auto; /* Let the height adjust to content */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Vertical stacking */
+    }
+
+    .contact-form .name-fields input {
+        width: 90%;
+        padding: 12px; /* Adjusted padding */
+        font-size: 16px; /* Font size for tablets */
+    }
+    .contact-form input.full-width,
+        .contact-form textarea.full-width {
+            width: 89%;
+            
+        }
+
+    .contact-form textarea {
+        height: 150px; /* Adjusted height */
+    }
+
+    .contact-form .submit-btn {
+        padding: 12px;
+        font-size: 18px; /* Font size for tablets */
+        bottom: 10px;
+       
+    }
+
+    .heading h2 {
+        font-size: 55px; /* Font size for tablets */
+    }
+
+    .heading p {
+        font-size: 20px; /* Font size for tablets */
+    }
+
+    .chat-section,
+    .call-section {
+        padding-left: 20px; /* Adjusted padding */
+        text-align: left; /* Align text left */
+    }
+
+    .call-section .phone-icon {
+        margin-right: 8px; /* Adjusted margin */
+        font-size: 22px; /* Icon size for tablets */
+    }
+}
+
+/* For tablet screens (iPad Air and iPad Pro) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+.navbar {
+    display: none;
+    background-color: transparent; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 15px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+    
+}
+
+.nav-link {
+    display: none;
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-links :hover {
+    color: #090b0d; /* Blue text on hover */
+}
+
+
+.navbar-right .contact-btn {
+    display: none;
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+.nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the navbar container */
+    .navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Adjusted gap */
+        padding: 20px; /* Reduced padding */
+    }
+
+    /* Position chat and call sections vertically centered below the border */
+    .chat-section, 
+    .call-section {
+        bottom: -500px; /* Space from the bottom */
+        width: 100%; /* Full width */
+        text-align: center; /* Center text */
+    }
+
+    .chat-section {
+        padding-left: 50px; /* Remove left padding */
+        margin-bottom: 10px; /* Space between sections */
+    }
+
+    .call-section {
+        padding-left: 50px; /* Remove left padding */
+    }
+    
+}
+/* For iPad Mini screen size (768px) */
+@media (min-width: 768px) and (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Adjust width to fit well on iPad Mini */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Padding inside the contact form */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Stack input fields vertically */
+    }
+
+    .contact-form .name-fields input {
+        width: 100%; /* Full width of the container */
+        padding: 10px; /* Padding inside input fields */
+        font-size: 16px; /* Font size for input fields */
+    }
+
+    .contact-form textarea {
+        width: 100%; /* Full width of the container */
+        height: 120px; /* Height of the textarea */
+        padding: 10px; /* Padding inside textarea */
+        font-size: 16px; /* Font size for textarea */
+    }
+
+    .contact-form .submit-btn {
+        width: 100%; /* Full width of the container */
+        padding: 12px; /* Padding inside the submit button */
+        font-size: 18px; /* Font size for submit button */
+        margin-top: 10px; /* Margin on top */
+    }
+
+    .heading h2 {
+        font-size: 36px; /* Smaller font size for heading */
+    }
+
+    .heading p {
+        font-size: 16px; /* Smaller font size for paragraph */
+    }
+}
+/* For iPad Mini screen size (768px) */
+@media (min-width: 768px) and (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Adjust width to fit well on iPad Mini */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Padding inside the contact form */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Stack input fields vertically */
+    }
+
+    .contact-form .name-fields input {
+        width: 100%; /* Full width of the container */
+        padding: 10px; /* Padding inside input fields */
+        font-size: 16px; /* Font size for input fields */
+    }
+
+    .contact-form textarea {
+        width: 100%; /* Full width of the container */
+        height: 120px; /* Height of the textarea */
+        padding: 10px; /* Padding inside textarea */
+        font-size: 16px; /* Font size for textarea */
+    }
+
+    .contact-form .submit-btn {
+        width: 100%; /* Full width of the container */
+        padding: 12px; /* Padding inside the submit button */
+        font-size: 18px; /* Font size for submit button */
+        margin-top: 10px; /* Margin on top */
+    }
+
+    .heading h2 {
+        font-size: 36px; /* Smaller font size for heading */
+    }
+
+    .heading p {
+        font-size: 16px; /* Smaller font size for paragraph */
+    }
+}
+/* For iPad Mini screen size (768px) */
+@media (min-width: 768px) and (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Adjust width to fit well on iPad Mini */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Padding inside the contact form */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Stack input fields vertically */
+    }
+
+    .contact-form .name-fields input {
+        width: 95%; /* Full width of the container */
+        padding: 10px; /* Padding inside input fields */
+        font-size: 16px; /* Font size for input fields */
+    }
+    .contact-form input.full-width{
+        width: 93%;
+    }
+    .contact-form textarea.full-width {
+        width: 95%;
+    }
+    .contact-form textarea {
+        width: 100%; /* Full width of the container */
+        height: 120px; /* Height of the textarea */
+        padding: 10px; /* Padding inside textarea */
+        font-size: 16px; /* Font size for textarea */
+    }
+
+    .contact-form .submit-btn {
+        width: 100%; /* Full width of the container */
+        padding: 12px; /* Padding inside the submit button */
+        font-size: 18px; /* Font size for submit button */
+        margin-top: 10px; /* Margin on top */
+    }
+
+    .heading h2 {
+        font-size: 36px; /* Smaller font size for heading */
+    }
+
+    .heading p {
+        font-size: 16px; /* Smaller font size for paragraph */
+    }
+}
+/* For iPad Mini screen size (768px) */
+@media (min-width: 540px) and (max-width: 540px) {
+    .contact-form {
+        width: 90%; /* Adjust width to fit well on iPad Mini */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Padding inside the contact form */
+    }
+
+    .contact-form .name-fields {
+        flex-direction: column; /* Stack input fields vertically */
+    }
+
+    .contact-form .name-fields input {
+        width: 95%; /* Full width of the container */
+        padding: 10px; /* Padding inside input fields */
+        font-size: 16px; /* Font size for input fields */
+    }
+    .contact-form input.full-width{
+        width: 93%;
+    }
+    .contact-form textarea.full-width {
+        width: 95%;
+    }
+    .contact-form textarea {
+        width: 120%; /* Full width of the container */
+        height: 120px; /* Height of the textarea */
+        padding: 10px; /* Padding inside textarea */
+        font-size: 16px; /* Font size for textarea */
+    }
+
+    .contact-form .submit-btn {
+        width: 100%; /* Full width of the container */
+        padding: 12px; /* Padding inside the submit button */
+        font-size: 18px; /* Font size for submit button */
+        margin-top: 10px; /* Margin on top */
+    }
+
+    .heading h2 {
+        font-size: 36px; /* Smaller font size for heading */
+    }
+
+    .heading p {
+        font-size: 16px; /* Smaller font size for paragraph */
+    }
+}
+
+    </style>
+</head>
+<script>
+    function validateForm(event) {
+        // Prevent form submission
+        event.preventDefault();
+
+        // Get form elements
+        const firstName = document.getElementById('first-name').value.trim();
+        const lastName = document.getElementById('last-name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Check if any fields are empty
+        if (!firstName || !lastName || !email || !phone || !message) {
+            alert('Please fill out all fields.');
+            return false;
+        }
+
+        // Validate email
+        if (!email.endsWith('@gmail.com')) {
+            alert('Please enter a valid Gmail address.');
+            return false;
+        }
+
+        // Validate phone number (only allows numbers, symbols, and brackets)
+        const phonePattern = /^[0-9\s\+\-\(\)]+$/;
+        if (!phonePattern.test(phone)) {
+            alert('Please enter a valid phone number with only numbers and allowed symbols.');
+            return false;
+        }
+
+        // If all validations pass, you can submit the form
+        alert('Form submitted successfully!');
+        document.querySelector('form').submit(); // or use AJAX to submit
+    }
+</script>
+<body>
+    <script>
+        function toggleNav() {
+    const navbarLinks = document.getElementById("navbarLinks");
+    navbarLinks.classList.toggle("show");
+}
+</script>
+<div class="navbara">
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <div id="navbarLinks" class="nav-links">
+        <img src="Group 1.png" alt="Kiyoset Code Logo">
+        <a href="index.html" class="nav-link">Home</a>
+
+    </div>
+</div>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="Group 1.png" alt="Kiyoset Code Logo">
+        </div>
+       
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+        <div class="navbar-nav">
+            <div class="nav-item">
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="index.html" class="contact-btn">BACK TO HOME</a>
+        </div>
+    </nav>
+    <section>
+        <div class="heading">
+            <h2>CONTACT OUR TEAM</h2>
+            <p>Got any questions about taking your business online? We're a team of dedicated computer science students ready to help you create the perfect website. Chat with us anytime, and we'll get your project rolling quickly.</p>
+        </div>
+        <div class="container">
+            <div class="contact-form">
+                <form  action="https://formsubmit.co/alvanesiaka@gmail.com" method="POST" onsubmit="validateForm(event)">
+                    <div class="name-fields">
+                        <div class="first-name">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+                        </div>
+                        <div class="last-name">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" class="full-width">
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="full-width">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" class="full-width"></textarea>
+
+                    <button type="submit" class="submit-btn">SEND A MESSAGE</button>
+                </form>
+            </div>
+
+            <div class="chat-call-wrapper">
+                <div class="chat-section">
+                    <h4>CHAT WITH US</h4>
+                    <p>Speak to our friendly team via live chat</p>
+                    <div class="social-links">
+                        <p>
+                            <a href="https://wa.me/message/P2EMCPHY6JOPA1" target="_blank" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:alvanesiaka@example.com" target="_blank" class="social-icon email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://x.com/kiyosetcode?t=vh8Lt3RX-8Rumnyir4P3IA&s=08" target="_blank" class="social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="call-section">
+                    <h4>GIVE US A CALL</h4>
+                    <p>We are with you from MON - FRI 8am to 5pm</p>
+                    <p><i class="fas fa-phone-alt phone-icon"></i>09157043763</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

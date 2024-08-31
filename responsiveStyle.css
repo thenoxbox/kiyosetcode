@@ -1,0 +1,214 @@
+.nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Show the nav links when the toggle button is clicked */
+.nav-links.show {
+    display: flex;
+}
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px; /* Adjusts the spacing between the elements */
+            padding: 30px;
+        }
+
+        .contact-form {
+            background-color: transparent;
+            padding: 30px;
+            border: 1px solid #6A7AFF;
+            border-radius: 15px;
+            width: 600px;
+            height: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3),
+                        0 0 15px #6A7AFF,
+                        0 0 30px #6A7AFF,
+                        0 0 45px #6A7AFF;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #6A7AFF;
+            border-radius: 10px;
+            background-color : transparent ;
+            font-size: 16px;
+            outline: none;
+            color: #FFFF;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #6A7AFF;
+            color: #FFFF;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        .contact-form .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #6A7AFF;
+            color: white;
+            border: 2px solid #6A7AFF;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+            text-decoration: none;
+        }
+
+        .contact-form .submit-btn:hover {
+            background-color: #ffffff; /* White background on tap */
+    color: #6A7AFF; /* Blue text on tap */
+        }
+
+        .heading {
+            font-family: 'Nunito Sans', sans-serif; 
+font-weight: 900; /* This is the black (boldest) weight for Nunito Sans */
+font-style: italic;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .heading h2 {
+            font-family: 'Nunito Sans', sans-serif; 
+font-weight: 900; /* This is the black (boldest) weight for Nunito Sans */
+font-style: italic;
+font-weight: bold; /* Ensures the font is bold */
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 400; /* Regular weight */
+            font-size: 20px;
+            max-width: 800px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .contact-form .name-fields {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-form .name-fields input {
+            width: 260px;
+        }
+
+        .contact-form input.full-width,
+        .contact-form textarea.full-width {
+            width: 565px;
+            max-width: 100%;
+        }
+
+        .chat-section {
+            align-self: center;
+            padding-left: 40px;
+        }
+
+        .chat-section h4 {
+            font-family: 'Nunito Sans', sans-serif; 
+font-weight: 900; /* This is the black (boldest) weight for Nunito Sans */
+font-style: italic;
+font-weight: bold; /* Ensures the font is bold */
+            font-size: 27px;
+            margin-bottom: 10px;
+            color: #f1eaea;
+        }
+
+        .chat-section p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 100; /* Regular weight */
+            font-size: 18px;
+            color: #eeecec;
+        }
+
+        .social-links p {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icon {
+            font-size: 32px;
+            color: #6A7AFF;
+            transition: transform 0.3s ease-in-out;
+            margin-left: 15px;
+            padding-left: 15px;
+        }
+
+        .social-icon:hover {
+            color: #FFFF;
+            transform: scale(1.2);
+        }
+
+        .call-section {
+            align-self: center;
+            padding-left: 100px;
+        }
+
+        .call-section h4 {
+            font-family: 'Nunito Sans', sans-serif; 
+font-weight: 900; /* This is the black (boldest) weight for Nunito Sans */
+font-style: italic;
+font-weight: bold; /* Ensures the font is bold */
+            font-size: 27px;
+            margin-bottom: 10px;
+            color: #f1eaea;
+        }
+
+        .call-section p {
+            font-family: 'Nunito Sans', sans-serif; 
+font-weight: 100; /* This is the black (boldest) weight for Nunito Sans */
+font-style: italic;
+            font-size: 18px;
+            color: #eeecec;
+        }
+        .nav-toggle {
+        display: none; /* Hide the button on phone screens */
+    }
+        /* Ensure both sections align horizontally */
+        .chat-call-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .call-section .phone-icon {
+    margin-right: 8px;
+    color: #6A7AFF; /* Change the icon color to match your theme */
+    font-size: 20px;
+    vertical-align: middle; /* Align icon with text */
+    transform: scaleX(-1); /* Flip the icon horizontally */
+}
+
+/* Media Queries */

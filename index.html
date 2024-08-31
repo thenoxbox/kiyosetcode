@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Company Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+         .nav-toggle {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        z-index: 999;
+    }
+        .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Show the nav links when the toggle button is clicked */
+.nav-links.show {
+    display: flex;
+}
+        /* For normal phone screen sizes */
+@media (min-width: 321px) and (max-width: 480px) {
+    body {
+        font-size: 15px; /* Slightly larger font size than the smallest phones */
+    }
+    
+    .navbar {
+        padding: 12px; /* Adjust padding around the navbar */
+    }
+
+    .navbar img {
+        max-width: 120px; /* Adjust logo size for normal phones */
+    }
+
+    .main-content h1 {
+        font-size: 26px; /* Adjust font size for the heading */
+    }
+
+    .main-content p {
+        font-size: 13px; /* Adjust font size for the paragraph */
+    }
+
+    .rounded-ball img {
+        width: 120px; /* Adjust size of the rounded ball image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .services-section h2 {
+        font-size: 20px; /* Adjust heading font size */
+    }
+
+    .service-box {
+        width: 220px; /* Adjust width of service boxes */
+        height: 170px; /* Adjust height of service boxes */
+    }
+
+    .black-circle {
+        width: 110px; /* Adjust size of black circle */
+        height: 110px; /* Adjust size of black circle */
+    }
+
+    #meet-the-team {
+        font-size: 15px; /* Adjust font size in the team section */
+    }
+
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Align team members vertically */
+    }
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 12px; /* Space between team members */
+    }
+
+    .team-member img {
+        width: 90px; /* Adjust team member image size */
+        height: 90px; /* Adjust team member image size */
+    }
+
+    .team-member h3 {
+        font-size: 17px; /* Adjust font size for team member names */
+    }
+
+    .team-member p {
+        font-size: 13px; /* Adjust font size for team member titles */
+    }
+
+    .paragraph5 p5 {
+        font-size: 13px; /* Adjust font size for paragraph text */
+    }
+
+    .contact-button {
+        font-size: 15px; /* Adjust font size for contact button */
+        padding: 9px 14px; /* Adjust padding for button */
+    }
+}
+
+        /* Media query for iPhone SE (1st Gen) and similar small phones */
+@media (max-width: 320px) {
+    body {
+        font-size: 14px; /* Smaller font size for very small screens */
+    }
+
+    .navbar {
+        padding: 8px; /* Adjust padding around the navbar */
+    }
+
+    .navbar img {
+        max-width: 100px; /* Adjust logo size for very small screens */
+    }
+
+    .main-content h1 {
+        font-size: 22px; /* Smaller font size for headings */
+    }
+
+    .main-content p {
+        font-size: 12px; /* Smaller font size for paragraphs */
+    }
+
+    .rounded-ball img {
+        width: 100px; /* Smaller size for the rounded ball image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .services-section h2 {
+        font-size: 18px; /* Smaller heading font size */
+    }
+
+    .service-box {
+        width: 200px; /* Adjust width of service boxes */
+        height: 150px; /* Adjust height of service boxes */
+    }
+
+    .black-circle {
+        width: 100px; /* Smaller size of black circle */
+        height: 100px; /* Smaller size of black circle */
+    }
+
+    #meet-the-team {
+        font-size: 14px; /* Smaller font size in the team section */
+    }
+
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Align team members vertically */
+    }
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 10px; /* Space between team members */
+    }
+
+    .team-member img {
+        width: 80px; /* Smaller team member image size */
+        height: 80px; /* Smaller team member image size */
+    }
+
+    .team-member h3 {
+        font-size: 15px; /* Smaller font size for team member names */
+    }
+
+    .team-member p {
+        font-size: 12px; /* Smaller font size for team member titles */
+    }
+
+    .paragraph5 p5 {
+        font-size: 12px; /* Smaller font size for paragraph text */
+    }
+
+    .contact-button {
+        font-size: 14px; /* Smaller font size for contact button */
+        padding: 8px 12px; /* Smaller padding for button */
+    }
+}
+
+        /* Media query for iPhone SE (2nd and 3rd Gen) and similar phones */
+@media (max-width: 375px) {
+    body {
+        font-size: 15px; /* Slightly larger font size than the smallest phones */
+    }
+
+    .navbar {
+        padding: 10px; /* Adjust padding around the navbar */
+    }
+
+    .navbar img {
+        max-width: 120px; /* Adjust logo size for slightly larger screens */
+    }
+
+    .main-content h1 {
+        font-size: 24px; /* Adjust font size for headings */
+    }
+
+    .main-content p {
+        font-size: 13px; /* Adjust font size for paragraphs */
+    }
+
+    .rounded-ball img {
+        width: 120px; /* Adjust size of the rounded ball image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .services-section h2 {
+        font-size: 20px; /* Adjust heading font size */
+    }
+
+    .service-box {
+        width: 220px; /* Adjust width of service boxes */
+        height: 170px; /* Adjust height of service boxes */
+    }
+
+    .black-circle {
+        width: 110px; /* Adjust size of black circle */
+        height: 110px; /* Adjust size of black circle */
+    }
+
+    #meet-the-team {
+        font-size: 15px; /* Adjust font size in the team section */
+    }
+
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Align team members vertically */
+    }
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 12px; /* Space between team members */
+    }
+
+    .team-member img {
+        width: 90px; /* Adjust team member image size */
+        height: 90px; /* Adjust team member image size */
+    }
+
+    .team-member h3 {
+        font-size: 17px; /* Adjust font size for team member names */
+    }
+
+    .team-member p {
+        font-size: 13px; /* Adjust font size for team member titles */
+    }
+
+    .paragraph5 p5 {
+        font-size: 13px; /* Adjust font size for paragraph text */
+    }
+
+    .contact-button {
+        font-size: 15px; /* Adjust font size for contact button */
+        padding: 9px 14px; /* Adjust padding for button */
+    }
+}
+
+/* For smallest phone screen sizes */
+@media (max-width: 320px) {
+    
+   
+    .navbar {
+    display: none;
+    background-color: #6A7AFF; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 15px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+    
+}
+
+.nav-link {
+    display: none;
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-links :hover {
+    color: #090b0d; /* Blue text on hover */
+}
+
+
+.navbar-right .contact-btn {
+    display: none;
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+.nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the navbar container */
+    .navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: #6A7AFF; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    body {
+        font-size: 14px; /* Reduces the font size for smaller screens */
+    }
+    
+    .navbar {
+        padding: 10px; /* Reduce padding around the navbar */
+    }
+
+    .navbar img {
+        max-width: 100px; /* Reduce logo size */
+    }
+
+    .main-content h1 {
+        font-size: 24px; /* Reduce font size for the heading */
+    }
+
+    .main-content p {
+        font-size: 12px; /* Reduce font size for the paragraph */
+    }
+
+    .rounded-ball img {
+        width: 100px; /* Reduce size of the rounded ball image */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .services-section h2 {
+        font-size: 18px; /* Reduce heading font size */
+    }
+
+    .service-box {
+        width: 400px; /* Reduce width of service boxes */
+        height: 150px; /* Reduce height of service boxes */
+    }
+
+    .black-circle {
+        width: 50px; /* Reduce size of the black circle */
+        height: 50px; /* Reduce size of the black circle */
+    }
+
+    #meet-the-team {
+        font-size: 14px; /* Reduce font size in the team section */
+    }
+
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Align team members vertically */
+    }
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 10px; /* Space between team members */
+    }
+
+    .team-member img {
+        width: 80px; /* Reduce team member image size */
+        height: 80px; /* Reduce team member image size */
+    }
+
+    .team-member h3 {
+        font-size: 16px; /* Reduce font size for team member names */
+    }
+
+    .team-member p {
+        font-size: 12px; /* Reduce font size for team member titles */
+    }
+
+    .paragraph5 p5 {
+        font-size: 12px; /* Reduce font size for paragraph text */
+    }
+
+    .contact-button {
+        font-size: 14px; /* Reduce font size for contact button */
+        padding: 8px 12px; /* Adjust padding for button */
+    }
+}
+
+/* For tablet sizes */
+@media (max-width: 768px) {   
+    .navbar {
+    background-color: #000000; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 50px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+}
+
+.navbar-left img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+}
+
+.navbar-right .contact-btn {
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-right .contact-btn:active {
+    background-color: #ffffff; /* White background on tap */
+    color: #6A7AFF; /* Blue text on tap */
+}
+
+.navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+    
+.rounded-ball {
+    width: 600px; /* Increased width */
+    height: 450px; /* Increased height */
+    animation: rotateOnce 0s ease-in-out forwards; /* Rotate once on page load */
+}
+
+@keyframes rotateOnce {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+    body {
+        font-size: 16px; /* Slightly smaller font size for tablets */
+    }
+
+    .navbar {
+        padding: 15px; /* Adjust padding around the navbar */
+    }
+
+    .navbar img {
+        max-width: 150px; /* Adjust logo size */
+    }
+
+    .main-content h1 {
+        font-size: 20px; /* Adjust font size for heading */
+    }
+
+    .main-content p {
+        font-size: 10px; /* Adjust font size for paragraph */
+    }
+
+    .rounded-ball img {
+        width: 150px; /* Adjust size of rounded ball image */
+        height: auto; /* Maintain aspect ratio */
+        padding-left: 20px;
+        margin-top: 70px;
+    }
+
+    .services-section h2 {
+        font-size: 22px; /* Adjust heading font size */
+    }
+
+    .service-box {
+        width: 300px; /* Adjust width of service boxes */
+        height: 250px; /* Adjust height of service boxes */
+        right: 30px;
+    }
+
+    .black-circle {
+        width: 100px; /* Adjust size of black circle */
+        height: 100px; /* Adjust size of black circle */
+    }
+
+    #meet-the-team {
+        font-size: 16px; /* Adjust font size in the team section */
+    }
+
+    #meet-the-team h2 {
+font-family: 'Futura', sans-serif;
+font-size: 20px;
+color: #ece0e0;
+}
+
+#meet-the-team h2::after {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Dot size */
+    height: 20px; /* Dot size */
+    background-color: #6A7AFF; /* Blue dot */
+    border-radius: 50%; /* Circular dot */
+    margin-left: 10px; /* Spacing between text and dot */
+}
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Align team members vertically */
+    }
+
+    .team-member {
+background-color: #6A7AFF;
+border-radius: 15px;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+padding: 10px;
+width: 200px;
+height: 300px;
+text-align: center;
+transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 15px; /* Space between team members */
+        margin-left: -10px;
+    }
+
+    .team-member img {
+        width: 100px; /* Adjust team member image size */
+        height: 100px; /* Adjust team member image size */
+    }
+
+    .team-member h3 {
+        font-size: 18px; /* Adjust font size for team member names */
+    }
+
+    .team-member p {
+        font-size: 14px; /* Adjust font size for team member titles */
+        margin: 20px 0;
+    }
+    
+.team-member img {
+border-radius: 50%;
+width: 200px;
+height: 200px;
+object-fit: cover;
+align-items: center;
+transition: transform 0.5s ease-out;
+}
+
+
+    .paragraph5 p5 {
+        font-size: 14px; /* Adjust font size for paragraph text */
+    }
+
+    .contact-button {
+        font-size: 16px; /* Adjust font size for contact button */
+        padding: 10px 15px; /* Adjust padding for button */
+    }
+
+    #WHO-WE-ARE {
+text-align: left;
+padding: 50px 20px;
+align-items: left;
+
+}
+#WHO-WE-ARE h2 {
+font-family: 'Futura', sans-serif;
+font-size: 20px;
+color: #ece0e0;
+text-align: left;
+align-items: left;
+
+}   
+
+.paragraph5 {
+font-family: 'JetBrains Mono', monospace;
+font-size: 15px;
+color: #ece0e0;
+text-align: left;
+align-items: left;
+}
+#WHO-WE-ARE h2::after {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Dot size */
+    height: 20px; /* Dot size */
+    background-color: #6A7AFF; /* Blue dot */
+    border-radius: 50%; /* Circular dot */
+    margin-left: 10px; /* Spacing between text and dot */
+}
+
+}
+@media (max-width: 855px) {
+       
+.navbar-left img {
+    display: flex;
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar {
+    background-color: #000000; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 50px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+}
+
+.navbar-left img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+}
+
+.navbar-right .contact-btn {
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-right .contact-btn:active {
+    background-color: #ffffff; /* White background on tap */
+    color: #6A7AFF; /* Blue text on tap */
+}
+
+.navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    .navbar-right .contact-btn {
+    display: none;
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+}
+@media (min-width: 321px) and (max-width: 500px) {
+
+    .text-content h1 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight:1000;
+        line-height: 100%;
+        /* font-weight: bold; */
+        color: #f2f0ef;
+        font-style: normal;
+        margin: 0;
+        font-size: 50px;
+        /* width: 80vw; */
+        padding: 0;
+        font-variation-settings: "wdth" 100, "YTLC" 500;
+        letter-spacing: -0.03em;
+    }
+    
+    .text-content {
+        width: 90%;
+        text-align: left;
+        margin: 0;
+        /* gap: 20px; */
+        padding: 0px;
+        margin-top: 19.5px;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+
+    }
+        
+   	.main-content {
+        display: flex;
+        margin: 0;
+        width: 100vw;
+        /* gap: 100px; */
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 0px;
+    }
+
+    .services-section {
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .services-section h2 {
+        font-size: 28px;
+    }
+    .services-container{
+        padding: 50px;
+    }
+    .text-content p {
+        font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+        font-weight: 400; /* Regular weight */
+        color: #ffffff; /* White text */
+        font-style: normal; /* Normal style */
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        line-height: 150%;
+        width: 100%;
+        text-align: right;
+        padding: 0; /* Remove padding */
+    }
+    .nav-links.show {
+    display: flex;
+    padding-top: 45px;
+    justify-content: space-around;
+}
+   .nav-link {
+        color: #ffffff;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 21px;
+        margin: 20px;
+    } 
+    #meet-the-team {
+        padding: 0px 20px;
+        margin-top: 80px;
+    }
+
+    #meet-the-team h2 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-style: oblique;
+        font-size: 28px;
+        color: #ece0e0;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        
+}
+
+    #meet-the-team h2::after {
+            content: '';
+            display: block;
+            width: 38px;
+            height: 38px;
+            background-color: #6A7AFF;
+            border-radius: 50%;
+            margin-left: 10px;
+    }
+
+.rounded-ball {
+    display:none;
+}
+
+.rounded-ball img {
+    width: 50%; /* Full width of the container */
+    height: 70%; /* Full height of the container */
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the ball */
+    object-fit: cover; /* Ensure the image covers the container */
+
+}
+
+.navbar {
+        background-color: transparent;
+        border: none;
+        padding: 7px 10px;
+        margin: 25px auto 20px auto;
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+    }
+
+.navbar-left img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+}
+
+.navbar-right .contact-btn {
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-right .contact-btn:active {
+    background-color: #ffffff; /* White background on tap */
+    color: #6A7AFF; /* Blue text on tap */
+}
+
+.navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+  
+.main-content {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space between the text and image */
+    margin: 0 20px; /* Margin for left and right */
+    height: calc(100vh - 150px); /* Adjust height to fill the viewport minus navbar and padding */
+}
+
+.text-content {
+    max-width: 53%; /* Limit the text width to make space for the image */
+}
+
+.text-content h1 {
+    font-family: 'Nunito Sans', sans-serif; /* Nunito Sans font */
+    font-weight: 900; /* Black weight */
+    color: #ffffff; /* White text */
+    font-style: italic; /* Italic style */
+    margin: 0;
+    font-size: 40px; /* Font size as requested */
+}
+
+.text-content p {
+    font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+    font-weight: 400; /* Regular weight */
+    color: #ffffff; /* White text */
+    font-style: normal; /* Normal style */
+    margin: 0;
+    font-size: 18px; /* Font size as requested */
+}
+
+
+.rounded-ball {
+    margin-left: 10px;
+    margin-top: -80px;
+    display: flex;
+    width: 600px; /* Increased width */
+    height: 400px; /* Increased height */
+    animation: rotateOnce 2s ease-in-out forwards; /* Rotate once on page load */
+    
+}
+
+.rounded-ball img {
+    width: 130%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the ball */
+    object-fit: cover; /* Ensure the image covers the container */
+
+}
+
+.navbar {
+    background-color: #000000; /* Dark grey background */
+    border: 1px solid #6A7AFF; /* Blue border */
+    border-radius: 50px; /* 50px border radius */
+    padding: 10px 30px; /* Padding inside the navbar */
+    margin: 25px auto 20px auto; /* Space below the navbar with 25px top margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the navbar */
+}
+
+.navbar-left img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.navbar-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #ffffff; /* White text for the navbar */
+    font-weight: 500; /* Medium font weight */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 18px; /* Font size for nav links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+}
+
+.navbar-right .contact-btn {
+    border: 1px solid #6A7AFF; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px; /* Padding inside the "Contact Us" button */
+    background-color: #6A7AFF; /* Default blue background */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
+    color: #ffffff; /* Default white text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-right .contact-btn:active {
+    background-color: #ffffff; /* White background on tap */
+    color: #6A7AFF; /* Blue text on tap */
+}
+
+.navbara {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns the button to the left */
+    }
+    
+    /* Adjust the position of the toggle button */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: transparent;
+        color: #6A7AFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    /* Center the nav links vertically */
+    .nav-links {
+        position: absolute;
+        top: -12px; /* Adjust based on your layout */
+        left: 0;
+        right: 0;
+        background-color: black; /* Navbar background color */
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+    }
+}
+@media (min-width: 820px) and (max-width: 821px) {
+    
+.rounded-ball {
+    margin-left: 10px;
+    margin-top: -80px;
+    display: flex;
+    width: 600px; /* Increased width */
+    height: 400px; /* Increased height */
+    animation: rotateOnce 2s ease-in-out forwards; /* Rotate once on page load */
+    
+}
+
+.rounded-ball img {
+    width: 120%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the ball */
+    object-fit: cover; /* Ensure the image covers the container */
+
+}
+}
+@media (min-width: 540px) and (max-width: 542px) {
+     
+.main-content {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space between the text and image */
+    margin: 0 20px; /* Margin for left and right */
+    height: calc(100vh - 150px); /* Adjust height to fill the viewport minus navbar and padding */
+}
+
+.text-content {
+    max-width: 50%; /* Limit the text width to make space for the image */
+}
+
+.text-content h1 {
+    font-family: 'Nunito Sans', sans-serif; /* Nunito Sans font */
+    font-weight: 900; /* Black weight */
+    color: #ffffff; /* White text */
+    font-style: italic; /* Italic style */
+    margin: 0;
+    font-size: 34px; /* Font size as requested */
+}
+
+.text-content p {
+    font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+    font-weight: 400; /* Regular weight */
+    color: #ffffff; /* White text */
+    font-style: normal; /* Normal style */
+    margin: 0;
+    font-size: 15px; /* Font size as requested */
+}
+
+
+.rounded-ball {
+    margin-left: 10px;
+    margin-top: -80px;
+    display: flex;
+    width: 400px; /* Increased width */
+    height: 300px; /* Increased height */
+    animation: rotateOnce 2s ease-in-out forwards; /* Rotate once on page load */
+    
+}
+
+.rounded-ball img {
+    width: 130%; /* Full width of the container */
+    height: 90%;/* Full height of the container */
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the ball */
+    object-fit: cover; /* Ensure the image covers the container */
+
+}
+}
+</style>
+<script>
+    function toggleNav() {
+const navbarLinks = document.getElementById("navbarLinks");
+navbarLinks.classList.toggle("show");
+}
+</script>
+ <script>
+ window.addEventListener('load', function() {
+    const ball = document.getElementById('roundedBall');
+    ball.style.animation = 'rotateOnce 1s ease-in-out forwards';
+});
+</script>
+<script>
+ window.addEventListener('scroll', function() {
+    var teamSection = document.getElementById('meet-the-team');
+    var sectionPosition = teamSection.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight / 1.3;
+
+    if(sectionPosition < screenPosition) {
+        teamSection.classList.add('visible');
+    }
+});
+</script>
+ <script>
+    document.addEventListener("scroll", function() {
+      var teamSection = document.getElementById("meet-the-team");
+      var teamMembers = document.querySelectorAll(".team-member");
+      var sectionPosition = teamSection.getBoundingClientRect().top;
+      var screenPosition = window.innerHeight / 1.3;
+    
+      if(sectionPosition < screenPosition) {
+        teamMembers.forEach(function(member, index) {
+          setTimeout(function() {
+            member.classList.add("active");
+          }, index * 200); // Delay the animation of each member
+        });
+      }
+    });
+    </script>
+    
+</head>
+<body>
+    <div class="navbara">
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+        <div id="navbarLinks" class="nav-links">
+            <img src="Group 1.png" alt="Kiyoset Code Logo">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#meet-the-team" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="Group 1.png" alt="Kiyoset Code Logo">
+        </div>
+        <div class="navbar-nav">
+            <div class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#meet-the-team">About Us</a>
+          </div>          
+            <div class="nav-item">
+                <a class="nav-link" href="#services">Our Services</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="contact.html" class="contact-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-content" id="home">
+        <div class="text-content">
+            <h1>We are a web development company stationed in Lagos state.</h1>
+            <p>We specialize in creating modern, responsive websites that help businesses thrive online. Let’s bring your ideas to life with our expert design and development services created by our expert team.</p>
+        </div>
+        <div class="rounded-ball">
+            <img src="DOTTED SPHERE.png" alt="Dotted Sphere">
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <h2>OUR SERVICES</h2>
+        <div class="services-container">
+        <div class="services-boxes">
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>Web Development and Design</h3>
+               <p>Creating modern, responsive websites to meet your business needs.</p>
+            </div>
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user interfaces for a great user experience.</p>
+            </div>
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>online portifolio creation</h3>
+                <p>Showcasing your skills and accomplishments with a professional, visually stunning online presence.
+                </p>
+            </div>
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>Graphic Design</h3>
+                <p>professional logos and eye-catching fliers that bring your brand to life.
+                </p>
+            </div>
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>Website Upgate/Redesign</h3>
+                <p>Revitalizing your online presence with modern, user-friendly designs that drive results.
+                </p>
+            </div>
+            <div class="service-box">
+                <div class="black-circle"></div>
+                <h3>Web Maintenance</h3>
+                <p> Keeping your website secure, fast, and up-to-date, so you can focus on your business.
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="meet-the-team" >
+        <h2>MEET THE TEAM</h2>
+        <div class="team-container" class="team-section">
+          <div class="team-member">
+            <img src="anthony (3).JPG" alt="Team Member 1">
+            <h3>ESIAKA ALVAN</h3>
+            <p> <i class="fas fa-code"></i>Lead Web Developer & Project Manager(founder)</p>
+              </div>
+          <div class="team-member">
+            <img src="anthony (1).jpg" alt="Team Member 2">
+            <h3>ANTHONY NWAFOR</h3>
+            <p> <i class="fas fa-code"></i>Lead Developer</p>
+        </div>
+          <div class="team-member">
+            <img src="anthony (2).jpg" alt="Team Member 3">
+            <h3>ONYEKA KAOBIMDI</h3>
+            <p> <i class="fas fa-pencil-alt"></i> UX/UI Designer</p>
+        </div>
+          <div class="team-member">
+            <img src="anthony (4).jpg" alt="Team Member 3">
+            <h3>OGUNTUASE TIMI</h3>
+            <p>  <i class="fas fa-chart-line"></i>Data Analyst</p>
+        </div>
+    </div>
+        </div>
+      </section>
+
+      <section id="WHO-WE-ARE" id="abouts">
+        <h2>WHO WE ARE</h2>
+       <div class="paragraph5" ><p5>We are a dynamic group of final year Computer Science students from Augustine University, united by a passion for technology and innovation. Through our academic journey, we have mastered both backend and frontend development, as well as data analytics. Our extensive training and hands-on experience allow us to tackle complex challenges and deliver cutting-edge solutions. We founded our online company with a vision to offer a wide range of services, from crafting visually stunning and user-friendly websites to providing in-depth data analysis that drives informed decisions. We are committed to excellence, and what sets us apart is our dedication to quality and a client-first approach. Every project is an opportunity to build lasting relationships, and we ensure that the solutions we provide not only meet but exceed expectations. Our team is passionate about continuous learning and staying ahead of industry trends, guaranteeing that the services we offer are always at the forefront of innovation. Whether you’re looking for web development, design, or analytics, we are here to help you succeed in the competitive digital landscape.</p5></div>
+    </section>
+
+    <section id="work-with-us">
+        <div class="container">
+          <h2>Wanna Work With Us?</h2>
+          <a href="contact.html" class="contact-button">Contact Us</a>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <div class="container">
+            <div>
+                <img src="Group 1.png" alt="Kiyoset Code Logo">
+                <p>Stay connected with us on one of our active social media platforms below</p>
+            </div>
+            <ul class="social-links">
+                <li><a href="https://wa.me/message/P2EMCPHY6JOPA1" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href=" https://www.instagram.com/kiyosetcode " target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href=" https://x.com/kiyosetcode?t=vh8Lt3RX-8Rumnyir4P3IA&s=08" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/kiyo-setcode-07775b321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+        </div>
+        <div class="copyright">
+        <p>Copyright &copy; 2024 by KiYOSET Code | All Rights Reserved.</p>
+    </div>
+      </footer>
+      
+      
+</body>
+</html>
+

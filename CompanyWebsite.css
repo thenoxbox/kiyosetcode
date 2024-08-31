@@ -1,0 +1,44 @@
+/* Basic CSS reset to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting the background color to black */
+body {
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White text for contrast */
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Example of using blue for links */
+a {
+    color: #007bff; /* Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Example of using blue and white in a header */
+header {
+    background-color: #007bff; /* Blue */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Example of using blue for buttons */
+button {
+    background-color: #007bff; /* Blue */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
