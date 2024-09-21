@@ -1,0 +1,357 @@
+.navbar-section {
+    /* Background image with dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('img.jpg') center/cover no-repeat;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar2 {
+display: flex;
+justify-content: space-between; /* Space between logo and nav links */
+align-items: center;
+padding: 20px;
+position: absolute;
+top: 0; /* Keep it at the very top */
+width: 100%; /* Take full width of the page */
+}
+
+.navbar-left img {
+max-height: 50px; /* Adjust logo size as needed */
+margin-left: 20px; /* Adds some space from the left edge */
+}
+
+.navbar-right {
+display: flex;
+gap: 20px; /* Adds spacing between the nav links */
+margin-right: 20px; /* Adds space from the right edge */
+}
+.nav-link {
+font-family: 'Nunito Sans', sans-serif; /* Ensures correct font */
+color: white;
+text-decoration: none;
+font-size: 16px;
+font-weight: 700; /* Makes the text thicker */
+padding: 4px 8px;
+transition: color 0.3s;
+margin-right: 20px; /* Moves the links a bit to the left */
+}
+
+.nav-link:hover {
+color: #6A7AFF; /* Hover effect for links */
+}
+
+
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+/* Blue line under the h1 */
+h1::after {
+    content: '';
+    display: block;
+    width: 100px; /* Adjust the line width */
+    height: 5px;
+    background-color: #6A7AFF; /* Blue line color */
+    margin: 20px auto 0; /* Margin for spacing */
+}
+
+.features-section {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 50px 0;
+margin-top: 90px;
+}
+
+.feature-row {
+display: flex;
+justify-content: center;
+gap: 20px; /* Space between each border */
+margin-bottom: 30px;
+}
+
+.feature-box {
+border: 2px solid black; /* Black border */
+width: 250px;
+height: 300px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 50px;
+position: relative;
+transition: all 0.3s ease;
+}
+.feature-box i {
+font-size: 50px;
+color: #6A7AFF; /* Blue icon */
+background: linear-gradient(145deg, #6A7AFF, #9B9BFF); /* Gradient background */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+border-radius: 50%; /* Rounded background */
+padding: 10px;
+display: inline-block;
+transition: all 0.3s ease; /* Smooth transition for hover effects */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for more depth */
+}
+
+
+.feature-box h1 {
+font-family: 'Nunito Sans', sans-serif;
+font-size: 20px;
+color: #fff;
+margin-top: -10px;
+text-align: center;
+}
+
+.feature-box P{
+font-family: 'Nunito Sans', sans-serif;
+font-size: 13px;
+color: #fff;
+margin-top: 20px;
+text-align: center;
+}
+
+
+/* Styling for the creative hover effect */
+.feature-box::before, .feature-box::after {
+content: '';
+position: absolute;
+width: 0;
+height: 0;
+border: 3px solid #6A7AFF;
+transition: width 0.4s ease, height 0.4s ease;
+}
+
+.feature-box::before {
+top: 0;
+left: 0;
+border-width: 3px 0 0 3px;
+}
+
+.feature-box::after {
+bottom: 0;
+right: 0;
+border-width: 0 3px 3px 0;
+}
+
+/* Hover effect: animate lines expanding from corners */
+.feature-box:hover::before {
+width: 100%;
+height: 100%;
+}
+
+.feature-box:hover::after {
+width: 100%;
+height: 100%;
+}
+
+/* Optional shadow and border-color change on hover for extra effect */
+.feature-box:hover {
+border-color: #6A7AFF; /* Change main border to blue on hover */
+box-shadow: 0 0 15px rgba(106, 122, 255, 0.6); /* Soft blue shadow */
+}
+.vertical-line {
+width: 5px;
+height: 60px;
+background-color: #6A7AFF;
+margin: 20px auto; /* Center horizontally */
+margin-top: 60px;
+opacity: 0; /* Initially hidden */
+transform: translateY(-50px); /* Start above the final position */
+transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
+}
+
+/* Active state when the line becomes visible */
+.vertical-line.active {
+opacity: 1; /* Fully visible */
+transform: translateY(0); /* Move to its original position */
+}
+
+html, body {
+margin: 0;
+padding: 0;
+overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.skills-section {
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+min-height: 100vh; /* Full viewport height */
+background-color: #000; /* Black background */
+padding: 20px; /* Padding around the section */
+margin-top: 120px;
+}
+
+.content {
+border: 2px solid rgba(48, 46, 46, 0.5); /* Light black border */
+padding: 40px; /* Space inside the border */
+color: #fff; /* White text color */
+max-width: 100%; /* Max width for content */
+width: 100%; /* Full width up to max-width */
+text-align: left; /* Align text to the left */
+height: 700px; /* Increased height for the border */
+background-color: #1a1a1a; /* Slightly lighter black for background inside border */
+}
+/* Initial state of h1 - offscreen on the right */
+.content h1 {
+font-family: 'Nunito Sans', sans-serif;
+font-weight: 900;
+color: #ffffff;
+font-style: italic;
+margin: 0 0 30px 0;
+font-size: 50px;
+text-align: left;
+max-width: 500px;
+overflow: hidden;
+opacity: 0; /* Initially hidden */
+transform: translateX(100%); /* Position offscreen to the right */
+transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
+}
+
+/* Active state when the h1 becomes visible */
+.content h1.active {
+opacity: 1; /* Fully visible */
+transform: translateX(0); /* Slide back to original position */
+}
+
+.content p {
+font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+font-weight: 400; /* Regular weight */
+color: #ffffff; /* White text */
+font-style: normal; /* Normal style */
+margin: 0;
+font-size: 20px; /* Font size as requested */
+text-align: left;
+max-width: 500px; /* Limit width of the paragraph */
+overflow: hidden; /* Hide overflow text */
+}
+.progress-bars {
+margin-top: 30px;
+}
+
+.progress-bar {
+margin-bottom: 20px;
+position: relative;
+}
+
+.progress-bar label {
+display: block;
+font-family: 'Nunito Sans', sans-serif; /* Font for labels */
+font-weight: 700; /* Bold weight */
+color: #ffffff; /* White text */
+margin-bottom: 5px; /* Space between label and bar */
+}
+
+.bar-background {
+background-color: #444; /* Dark background for progress bar */
+border-radius: 5px; /* Rounded corners */
+height: 20px; /* Height of the bar */
+width: 100%; /* Full width */
+position: relative;
+}
+
+.bar {
+background-color: #6A7AFF; /* Blue bar color */
+height: 100%; /* Full height */
+width: 0%; /* Start with 0% width */
+border-radius: 5px; /* Rounded corners */
+transition: width 1s ease-out; /* Smooth transition for width */
+}
+
+.percentage {
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+font-family: 'JetBrains Mono', monospace; /* Font for percentages */
+font-weight: 400; /* Regular weight */
+color: #ffffff; /* White text */
+}
+.solutions-section {
+display: flex; /* To align the content and image side by side */
+justify-content: space-between; /* Space between the text and image */
+align-items: center; /* Vertically align items */
+padding: 50px; /* Add padding for spacing */
+}
+
+.solutions-content {
+width: 50%; /* Make the content take half the space */
+text-align: right; /* Align text to the right */
+margin-top: 50px;
+}
+.solutions-content h1 {
+font-family: 'Nunito Sans', sans-serif;
+font-size: 40px;
+font-weight: 900;
+color: white;
+margin-bottom: 20px;
+text-align: left;
+opacity: 0; /* Initially hidden */
+transform: translateX(-50px); /* Start left from the final position */
+transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
+}
+
+/* Active state for the heading when it becomes visible */
+.solutions-content h1.active {
+opacity: 1; /* Fully visible */
+transform: translateX(0); /* Move to the final position */
+}
+
+
+.solutions-content p {
+font-family: 'JetBrains Mono', monospace;
+font-size: 18px;
+font-weight: 400;
+color: white; /* Slightly lighter color for contrast */
+line-height: 1.6; /* Make text easier to read */
+text-align: left;
+}
+
+.solutions-image {
+width: 40%; /* Adjust width for the image */
+text-align: left; /* Align image to the left */
+}
+
+.solutions-image img {
+width: 100%; /* Make sure the image fills its container */
+border-radius: 10px; /* Add slight rounding to the image */
+}
+
+.learn-more-btn {
+display: inline-block;
+background-color: #6A7AFF; /* Blue background */
+color: #ffffff; /* White text */
+font-family: 'Nunito Sans', sans-serif;
+font-weight: 600;
+font-size: 18px;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+cursor: pointer;
+padding-left: 40px;
+}
+
+.learn-more-btn:hover {
+background-color: #ffffff; /* White background on tap */
+color: #6A7AFF; /* Blue text on tap */
+}
+
+.arrow-icon {
+margin-left: 10px;
+font-size: 20px; /* Size of the arrow */
+}

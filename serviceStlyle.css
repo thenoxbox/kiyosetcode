@@ -1,0 +1,699 @@
+.navbar-section {
+    /* Background image with dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('img.jpg') center/cover no-repeat;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar2 {
+display: flex;
+justify-content: space-between; /* Space between logo and nav links */
+align-items: center;
+padding: 20px;
+position: absolute;
+top: 0; /* Keep it at the very top */
+width: 100%; /* Take full width of the page */
+}
+
+.navbar-left img {
+max-height: 50px; /* Adjust logo size as needed */
+margin-left: 20px; /* Adds some space from the left edge */
+}
+
+.navbar-right {
+display: flex;
+gap: 20px; /* Adds spacing between the nav links */
+margin-right: 20px; /* Adds space from the right edge */
+}
+.nav-link {
+font-family: 'Nunito Sans', sans-serif; /* Ensures correct font */
+color: white;
+text-decoration: none;
+font-size: 16px;
+font-weight: 700; /* Makes the text thicker */
+padding: 4px 8px;
+transition: color 0.3s;
+margin-right: 20px; /* Moves the links a bit to the left */
+}
+
+.nav-link:hover {
+color: #6A7AFF; /* Hover effect for links */
+}
+
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+/* Blue line under the h1 */
+h1::after {
+    content: '';
+    display: block;
+    width: 100px; /* Adjust the line width */
+    height: 5px;
+    background-color: #6A7AFF; /* Blue line color */
+    margin: 20px auto 0; /* Margin for spacing */
+}
+.features-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align all items to the left */
+    padding: 50px 20px; /* Add padding around the section */
+    margin-top: 90px;
+}
+.services-paragraph {
+    margin-bottom: 50px; /* Space between heading and feature boxes */
+    margin-top: -20px; /* Move the paragraph up */
+    /* Optional: Add any additional left margin if needed */
+    margin-left: 0; /* Adjust if you need specific left margin */
+}.services-heading {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 48px;
+    color: white;
+    margin: 0;
+    position: relative;
+    margin-bottom: 60px;
+    margin-left: 0; 
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Positioned off the left side */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth animation (slower) */
+}
+
+/* Blue line on the right side of the h1 */
+.services-heading::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #6A7AFF;
+    position: absolute;
+    right: 0; 
+    bottom: -10px; 
+}
+
+/* When the services-heading is visible, bring it into view */
+.services-heading.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move it to its original position */
+}
+.feature-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between each border */
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    border: 2px solid black; /* Black border */
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease; /* Fade-in effect */
+}
+
+/* When the feature-box is visible, set opacity to 1 */
+.feature-box.visible {
+    opacity: 1;
+}
+
+    .feature-box i {
+    font-size: 50px;
+    color: #6A7AFF; /* Blue icon */
+    background: linear-gradient(145deg, #6A7AFF, #9B9BFF); /* Gradient background */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 50%; /* Rounded background */
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for more depth */
+    }
+    
+    
+    .feature-box h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    margin-top: -10px;
+    text-align: center;
+    }
+    
+    .feature-box P{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    }
+    
+    
+    /* Styling for the creative hover effect */
+    .feature-box::before, .feature-box::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 3px solid #6A7AFF;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+    
+    .feature-box::before {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px;
+    }
+    
+    .feature-box::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 3px 3px 0;
+    }
+    
+    /* Hover effect: animate lines expanding from corners */
+    .feature-box:hover::before {
+    width: 100%;
+    height: 100%;
+    }
+    
+    .feature-box:hover::after {
+    width: 100%;
+    height: 100%;
+    }
+    
+    /* Optional shadow and border-color change on hover for extra effect */
+    .feature-box:hover {
+    border-color: #6A7AFF; /* Change main border to blue on hover */
+    box-shadow: 0 0 15px rgba(106, 122, 255, 0.6); /* Soft blue shadow */
+    }
+
+    /* FAQ Heading */
+.faq-heading {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 48px;
+    color: #fff;
+    margin: 0 0 10px 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade-in transition */
+}
+
+/* FAQ Subheading */
+.faq-subheading {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #ccc;
+    margin: 0 0 30px 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade-in transition */
+}
+
+/* FAQ Item */
+.faq-item {
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade-in transition */
+}
+
+/* Visible state for each element */
+.faq-heading.visible {
+    opacity: 1; /* Fully visible */
+}
+
+.faq-subheading.visible {
+    opacity: 1; /* Fully visible */
+}
+
+.faq-item.visible {
+    opacity: 1; /* Fully visible */
+}
+
+    .faq-question {
+        border: 1px solid white;
+        background-color: transparent; /* Transparent background for the question */
+        color: white;
+        padding: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
+    }
+
+    .faq-question h2 {
+        margin: 0;
+    }
+
+    .faq-answer {
+        display: none; /* Hidden by default */
+        padding: 15px;
+        border: 1px solid white;
+        background-color: transparent; /* Slightly lighter background for answer */
+        color: white;
+        transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.5s ease; /* Smooth dropdown */
+        max-height: 0;
+        overflow: hidden; /* Hide overflow */
+    }
+
+    .faq-item.active .faq-answer {
+        display: block;
+        padding: 15px;
+        opacity: 1;
+        max-height: 1400px; /* Maximum height for sliding effect */
+    }
+
+    .faq-item.active .faq-question,
+    .faq-item.active .faq-answer {
+        border-color: #6A7AFF; /* Blue border when active */
+        color: white; /* Blue text when active */
+    }
+    /* General styling for the terms and conditions */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #6A7AFF; /* Accent border on the left */
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+/* Specific styling for h2 inside .section */
+.section h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Specific styling for h3 inside .subsection */
+.subsection h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 10px;
+    color: #6A7AFF;
+    margin-bottom: 8px;
+}
+
+/* Paragraph and list styles */
+.section p, .section ul {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* List styles */
+.section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+/* Add custom bullet */
+.section ul li::before {
+    content: "•"; /* Custom bullet point */
+    position: absolute;
+    left: 0;
+    color: #6A7AFF;
+    font-size: 1rem;
+}
+
+/* Link styling */
+.section a {
+    color: #6A7AFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styling for subsections */
+.subsection {
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 3px dashed #6A7AFF;
+}
+.faq-section {
+    background-color:transparent; /* Dark background */
+    color: #fff; /* White text */
+    padding: 15px;
+    margin-top: 120px;
+}
+#product1 {
+    text-align: center;
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    gap: 10px; /* No gap between items */
+    padding-top: 15px;
+    flex-wrap: wrap; /* Allows items to wrap if necessary */
+}
+
+#product1 .pro {
+    width: 28%; /* Shrinks the width to fit more items on the same line */
+    height: auto;
+    min-width: 220px;
+    padding: 7px 9px;
+    border: 1px solid rgb(243, 243, 243);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: none; /* Remove shadow if unnecessary */
+    margin: 0px; /* No extra margin */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade-in effect */
+}
+
+/* When the pro item is visible, set opacity to 1 */
+#product1 .pro.visible {
+    opacity: 1;
+}
+
+#product1 .pro:hover {
+    transform: scale(1.04);
+    border: 2px solid #6A7AFF;
+}
+
+i{
+    color: #6A7AFF;
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 15px ;
+}
+
+#product1 .pro .des h1 {
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+#product1 .pro .des h2 {
+    padding-top: -30px;
+    color: gray;
+}
+
+#product1 .pro .des h4 {
+    padding-top: -90px;
+    line-height: 29px;
+    color: white;
+}
+
+
+
+#product1 .pro img {
+    width: 50%;
+    padding: 2px 2px 2px 2px;
+    position: sticky;
+    top: 120vh;
+    right: 550vh;
+}
+
+button {
+    margin-left: 55px;
+    color: whitesmoke;
+    text-decoration: none;                                                                                                                                                                                  
+    padding: 1rem 1.5rem;
+    border-radius: 4rem 0rem 4rem 0rem;
+    background-color: #6A7AFF;
+    box-shadow: 0 0 1rem #6A7AFF;
+    letter-spacing: .1rem;
+    transition: .5s ease;
+}
+
+button a {
+    text-decoration: none;  
+    color: white;
+    background: #6A7AFF;
+}
+
+
+button:hover {
+    box-shadow: none;
+}
+#work-with-us {
+    background-color: #6A7AFF; /* Blue background color */
+    padding: 100px 0; /* Adjust padding as needed */
+    position: relative; /* Needed for positioning pseudo-elements */
+    overflow: hidden; /* Ensures pseudo-elements do not overflow */
+    border-radius: 0 0 100px 0; /* Creates the rounded dent effect */
+    z-index: 1; /* Ensure it sits behind the content */
+    margin-top: 20px;
+}
+
+#work-with-us .container {
+    text-align: center; /* Center the text */
+}
+
+#work-with-us h2 {
+    color: white; /* White text color */
+    font-size: 2em; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initial position (below) */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transitions */
+}
+
+#work-with-us h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#work-with-us::before {
+    content: "";
+    position: absolute;
+    bottom: -50px; /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Height of the dent */
+    background-color: #6A7AFF; /* Match the section background color */
+    border-radius: 0 0 100px 100px; /* Creates the rounded dent effect */
+    z-index: 1; /* Ensure it sits behind the content */
+}
+
+#work-with-us .contact-button {
+    display: inline-block;
+    background-color: black; /* Button background color */
+    color: white; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 25px;
+    font-family: 'Bayon', sans-serif;
+    text-align: center; /* Center the text inside the button */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Font size */
+    text-decoration: none; /* Remove underline */
+    margin-top: 20px; /* Space between header and button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for 3D effect */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Initial position (above) */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transitions */
+}
+
+#work-with-us .contact-button.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#work-with-us .contact-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: black; /* Text color on hover */
+}
+.testimonial-section {
+    background-color: black;
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+  }
+  /* Header styling */
+  .testimonial-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  
+  .testimonial-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-20px); /* Start slightly off the left */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
+  }
+  
+  /* When the h1 is visible, bring it into view */
+  .testimonial-header h1.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to original position */
+  }
+  
+  .testimonial-header p {
+    color: #6A7AFF;
+    font-size: 1.2em;
+  }
+  
+  /* Testimonial content styling */
+  .testimonial-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }.testimonial-box {
+    background-color: black;
+    border: 2px solid white;
+    width: 300px;
+    height: 480px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    position: relative;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+  }
+  
+  /* When the testimonial box is visible */
+  .testimonial-box.visible {
+    opacity: 1; /* Fully visible */
+  }
+  
+  .testimonial-box:hover {
+    border-color: #6A7AFF;
+  }
+  
+  .quotes-icon {
+    font-size: 6em;
+    color: #6A7AFF;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    /* Add shadow effect */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(255, 255, 255, 0.2);
+    
+    /* Rotation and transformation */
+    transform: rotate(-5deg);
+    
+    /* Create a glowing border effect */
+    border: 3px solid transparent;
+    padding: 10px;
+    border-radius: 50%;
+  
+    /* Add hover effect */
+    transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+  }
+  
+  .quotes-icon:hover {
+    /* Rotate back to normal on hover */
+    transform: rotate(0deg);
+    
+    /* Change color and shadow on hover */
+    color: #009FFD;
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5), -6px -6px 8px rgba(255, 255, 255, 0.2);
+    
+    /* Add a subtle scale-up effect */
+    transform: scale(1.1);
+  }
+  
+  
+  .testimonial-text {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+    width: 200px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    margin-top: -40px;
+  }
+  .testimonial-img {
+    position: absolute;
+    bottom: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .testimonial-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the aspect ratio and fills the container */
+    object-position: top; /* Adjusts to show the top part of the image (usually the face) */
+  }
+  /* Targeting only the h1 and p inside the testimonial box */
+  .testimonial-box h1 {
+    margin-top: 80px; /* Adjust to bring the text under the image */
+    font-size: 1.2em; /* Smaller font size */
+    color: white;
+    text-align: center;
+    
+    /* Blue line under the h1 */
+    position: relative;
+    bottom: -100px;
+  }
+  
+  .testimonial-box h1::after {
+    content: '';
+    display: none;
+    width: 100px; /* Adjust the line width */
+    height: 5px;
+    background-color: #6A7AFF; /* Blue line color */
+    margin: 20px auto 0; /* Margin for spacing */
+    /* Make the line invisible */
+    opacity: 0; /* Alternatively, use visibility: hidden; or width: 0; */
+  }
+  .testimonial-role{
+      padding-top: 40px;
+  }
+  .testimonial-names {
+    padding-top: 30px; /* Reduced padding */
+}
+
+.testimonial-roles {
+    padding-top: 40px; /* Reduced padding */
+}
+
+.testimonial-name1 {
+    padding-top: 83px; /* Increased margin to move it down further */
+}
+
+.testimonial-role1 {
+    padding-top: 38px; /* Increased padding to move the role down further */
+}
+
+
+/* General Styling - Hide Dots by Default */
+.dots-container {
+    display: none; /* Hide by default */
+  }
+  

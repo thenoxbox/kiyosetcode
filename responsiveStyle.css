@@ -76,7 +76,7 @@
             cursor: pointer;
             position: relative;
             bottom: -40px;
-            left: 0;
+            left: -55px;
             right: 0;
             transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
             text-decoration: none;
